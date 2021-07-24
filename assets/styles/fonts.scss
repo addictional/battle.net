@@ -1,0 +1,20 @@
+@use './variables' as a;
+
+
+@font-face {
+    font-family: a.$font;
+    font-style: normal;
+    font-weight: 400;
+    src: local("Blizzard"),local("Blizzard"),url("/fonts/blizzard.regular.woff") format("woff")
+}
+
+
+@font-face {
+    font-family: a.$font;
+    font-style: normal;
+    font-weight: 700;
+    src: local("Blizzard Bold"),local("Blizzard-Bold"),url("/fonts/blizzard.bold.woff") format("woff")
+}
+
+
+
