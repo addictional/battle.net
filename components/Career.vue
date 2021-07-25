@@ -54,29 +54,21 @@ export default {
         }
     },
 
-     mounted() {
-        this.observer = new IntersectionObserver(
-            this.onElementObserved, 
-            {
-                root: null,
-                threshold: 1.0,
-            }
-        );
-        this.observer.observe(this.$el);
+    mounted() {
+         this.$intersectionObserver.observe(this.$el,this.onElementObserved);
     },
     beforeDestroy() {
         this.stopSliderMove();
-        this.observer.disconnect();
+        this.$intersectionObserver.unobserve(this.$el);
     },
     methods: {
-        onElementObserved(entries) {
-            entries.forEach(({ target, intersectionRatio}) => {
-                if(intersectionRatio === 1) {
-                    this.sliderMove();
-                } else {
-                    this.stopSliderMove();
-                }
-            });
+        onElementObserved(intersectionRatio) {
+            if(intersectionRatio === 1) {
+                this.sliderMove();
+            } else {
+                this.stopSliderMove();
+            }
+            
         },
         sliderMove() {
            const MAX = this.list.length - 1;
@@ -84,8 +76,8 @@ export default {
                 this.index = this.index === MAX ? 0 : this.index + 1;
                 this.intervalId = setInterval(()=>{
                     this.index = this.index === MAX ? 0 : this.index + 1;
-                },5000);
-            },3000);
+                },4000);
+            },2000);
             
         },
         stopSliderMove() {
