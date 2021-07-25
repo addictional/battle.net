@@ -7,7 +7,7 @@ export default {
     
     title: 'blizzard-ssr',
     htmlAttrs: {
-      lang: 'en'
+      // lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },
@@ -76,7 +76,7 @@ export default {
       cookieKey: 'i18n_redirected',
     },
    
-    defaultLocale: 'en',
+    defaultLocale: 'en-US',
     vueI18nLoader: true,
   },
 
