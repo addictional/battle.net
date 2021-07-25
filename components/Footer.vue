@@ -1,3 +1,15 @@
+<i18n>
+{
+  "en-us": {
+    "nav": ["Careers","About","Support","Contact Us","press","api","site map"]
+  },
+  "ru-ru": {
+      "nav": ["вакансии","о компании","поддержка","открыть запрос","пресс-релиз","api","карта сайта"]
+    
+  }
+}
+</i18n>
+
 <template>
     <footer class="footer">
         <div v-if="visible"  class="overlay" @click="visible = !visible"/>
@@ -18,6 +30,22 @@
                 <div class="selector-toggle__arrows"><svg-icon name="arrows"/></div>
             </div>
         </div>
+        <div class="footer-logo">
+            <nuxt-link :to="localePath('/')">
+            <svg-icon name="logo2"/>
+            <svg-icon name="entertainment"/>
+             </nuxt-link>
+        </div>
+
+        <nav class="footer-nav">
+            <nuxt-link :to="localePath('/about')"  class="footer-nav__item">{{$t('nav.0')}}</nuxt-link>
+            <nuxt-link :to="localePath('/about')"  class="footer-nav__item">{{$t('nav.1')}}</nuxt-link>
+            <nuxt-link :to="localePath('/about')"  class="footer-nav__item">{{$t('nav.2')}}</nuxt-link>
+            <nuxt-link :to="localePath('/about')"  class="footer-nav__item">{{$t('nav.3')}}</nuxt-link>
+            <nuxt-link :to="localePath('/about')"  class="footer-nav__item">{{$t('nav.4')}}</nuxt-link>
+            <nuxt-link :to="localePath('/about')"  class="footer-nav__item">{{$t('nav.5')}}</nuxt-link>
+            <nuxt-link :to="localePath('/about')"  class="footer-nav__item">{{$t('nav.6')}}</nuxt-link>
+        </nav>
     </footer>
     
 </template>
@@ -46,6 +74,73 @@ export default {
     min-height: 520px;
     margin-top: 20px;
     font-family: "Open Sans",Helvetica,Arial,sans-serif;
+
+    &-logo {
+        display: block;
+        position: relative;
+        margin: 30px 0;
+        height: 66px;
+        & > a {
+            display: block;
+            width: 124px;
+            height: 66px;
+            margin: 0 auto;
+            position: relative;
+            & > * {
+                width: 124px;
+                height: 66px;
+            }
+            & > :first-child {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                fill: #00aeff;
+                pointer-events: none;
+                transition: color 200ms,background-color 200ms;
+            }
+            & > :last-child {
+                fill: #fff;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                pointer-events: none;
+                transition: color 200ms,background-color 200ms;
+            }
+        }
+    }
+
+    &-nav {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin: 15px 0;
+        font-family: "Blizzard",Helvetica,Arial,sans-serif;
+        font-size: 17px;
+        line-height: 1.4;
+        color: rgba(255,255,255,0.7);
+        :first-child::before {
+            display: none;
+        }
+        &__item {
+            text-transform: uppercase;
+            &:hover {
+                color: rgba(255,255,255);
+            }
+            &::before {
+                content: '';
+                display: inline-block;
+                height: 10px;
+                width: 1px;
+                background-color: rgba(255,255,255,0.3);
+                margin: 0 15px;
+                pointer-events: none;
+            }
+        }    
+    }
 
     .overlay {
         position: fixed;
