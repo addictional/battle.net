@@ -1,9 +1,7 @@
 <template>
   <div class="page__container">
     <Header/>
-    <main class="page__content">
-      <Nuxt/>
-    </main>
+    <Nuxt/>
     <Footer/>
     
   </div>
@@ -11,8 +9,18 @@
 
 
 
+// <script>
+
+// import IntersectionObserverService from '../services/IntersectionObserver';
+
+// export default {
+//   provide: {intersectionObserver: new IntersectionObserverService()}
+// }
+// </script>
+
 <style lang="scss" >
 @use './assets/styles/main';
+
 
 #app {
   -webkit-font-smoothing: antialiased;
@@ -24,13 +32,5 @@
 .svg-sprite {
   display: none;
 }
-body {
-  margin: 0;
-  font-family: "Blizzard";
-  background-color: #002650;
-}
-a {
-  text-decoration: none;
-  color: inherit;
-}
+
 </style>
