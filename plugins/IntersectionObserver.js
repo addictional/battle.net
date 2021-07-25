@@ -8,7 +8,7 @@ class InsectionObserverService {
             this._onChange.bind(this), 
             {
                 root: null,
-                threshold: 1.0,
+                threshold: 0.7,
             }
         )
     }
