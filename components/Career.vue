@@ -63,7 +63,7 @@ export default {
     },
     methods: {
         onElementObserved(intersectionRatio) {
-            if(intersectionRatio === 1) {
+            if(intersectionRatio > 0.7) {
                 this.sliderMove();
             } else {
                 this.stopSliderMove();
