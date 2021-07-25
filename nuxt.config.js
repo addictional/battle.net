@@ -1,19 +1,8 @@
 import Sass from 'sass';
 import Fiber from 'fibers'
 
-const routerBase =
-  process.env.DEPLOY_ENV === "GH_PAGES"
-    ? {
-        router: {
-          base: "/my-nuxt-app/"
-        }
-      }
-    : {};
-
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
-
-  ...routerBase,
   head: {
     
     title: 'blizzard-ssr',
@@ -87,9 +76,8 @@ export default {
       cookieKey: 'i18n_redirected',
     },
    
-    defaultLocale: 'en-us',
+    defaultLocale: 'en',
     vueI18nLoader: true,
-    parsePages: true,
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
