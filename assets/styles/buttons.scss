@@ -1,0 +1,29 @@
+.button {
+    display: inline-block;
+    position: relative;
+    background-color: #006fb2;
+    border: solid 1px #00aeff;
+    font-family: "Open Sans",Helvetica,Arial,sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+    padding: 10px 50px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: color 200ms,background-color 200ms,border-color 200ms;
+    line-height: normal;
+    outline-offset: 2px;
+    box-sizing: border-box;
+    &:hover {
+        background-color: #007bc6;
+        border: solid 1px #79d4ff;
+        color: #fff;
+    }
+
+    &--outlined {
+        background-color: transparent;
+        color: #00aeff;
+        padding: 10px 16px;
+    }
+}
