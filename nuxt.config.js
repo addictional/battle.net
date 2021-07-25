@@ -76,7 +76,7 @@ export default {
       cookieKey: 'i18n_redirected',
     },
    
-    defaultLocale: 'en-US',
+    defaultLocale: 'en-us',
     vueI18nLoader: true,
   },
 
