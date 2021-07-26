@@ -1,11 +1,14 @@
 <i18n>
 {
   "en-us": {
-    "nav": ["Careers","About","Support","Contact Us","press","api","site map"]
+    "nav": ["Careers","About","Support","Contact Us","press","api","site map"],
+    "sublinks": ["privacy","legal","terms","cookie policy","cookie setting"],
+    "trademarks": {"before": "","link": "","after": ""}
   },
   "ru-ru": {
-      "nav": ["вакансии","о компании","поддержка","открыть запрос","пресс-релиз","api","карта сайта"]
-    
+      "nav": ["вакансии","о компании","поддержка","открыть запрос","пресс-релиз","api","карта сайта"],
+      "sublinks": ["Политика конфиденциальности","Соглашения","Условия","Политика cookie","Параметры cookie"],
+      "trademarks": {"before": "","link": "","after": ""}
   }
 }
 </i18n>
@@ -45,6 +48,19 @@
             <nuxt-link :to="localePath('/about')"  class="footer-nav__item">{{$t('nav.4')}}</nuxt-link>
             <nuxt-link :to="localePath('/about')"  class="footer-nav__item">{{$t('nav.5')}}</nuxt-link>
             <nuxt-link :to="localePath('/about')"  class="footer-nav__item">{{$t('nav.6')}}</nuxt-link>
+        </nav>
+        <div class="footer-download-text">
+            <span>All games, one app:</span>
+            <a class="footer-download-text__link"> <svg-icon name="battle-net-tag"/> Battle.net Desktop App</a>
+        </div>
+        <div class="footer-copyright">©2021 Blizzard Entertainment, Inc. All rights reserved.</div>
+        <div class="footer-trademark">All <a href="https://www.blizzard.com/legal/b04001c4-dc81-480d-a475-5e276e241e4f/">trademarks</a> referenced herein are the properties of their respective owners.</div>
+        <nav class="footer-nav footer-nav--sublinks">
+            <nuxt-link :to="localePath('/about')"  class="footer-nav__item">{{$t('sublinks.0')}}</nuxt-link>
+            <nuxt-link :to="localePath('/about')"  class="footer-nav__item">{{$t('sublinks.1')}}</nuxt-link>
+            <nuxt-link :to="localePath('/about')"  class="footer-nav__item">{{$t('sublinks.2')}}</nuxt-link>
+            <nuxt-link :to="localePath('/about')"  class="footer-nav__item">{{$t('sublinks.3')}}</nuxt-link>
+            <nuxt-link :to="localePath('/about')"  class="footer-nav__item">{{$t('sublinks.4')}}</nuxt-link>
         </nav>
     </footer>
     
@@ -139,7 +155,14 @@ export default {
                 margin: 0 15px;
                 pointer-events: none;
             }
-        }    
+        } 
+        &.footer-nav--sublinks {
+            font-size: 13px;
+            margin: 0;
+            .footer-nav__item::before {
+                margin: 0 10px;
+            }
+        }   
     }
 
     .overlay {
@@ -271,6 +294,56 @@ export default {
             }
         }
 
+        
+
+    }
+
+    &-download-text {
+        font-family: "Open Sans",Helvetica,Arial,sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.4;
+        color: rgba(255,255,255,0.7);
+        text-align: center;
+        margin: 40px 0;
+
+        &__link {
+            color: #00aeff;
+            cursor: pointer;
+            &:hover, &:focus {
+                color: #00c6ff;
+            }
+
+            & > svg {
+                height: 15.99px;
+                width: 16.56px;
+                fill:currentColor;
+                transform: translateY(2px);
+            }
+        }
+
+    }
+
+    &-copyright, &-trademark {
+        font-family: "Blizzard",Helvetica,Arial,sans-serif;
+        font-size: 13px;
+        line-height: 1.4;
+        color: rgba(255,255,255,0.5);
+        margin: 0;
+        text-align: center;
+    }
+    &-copyright {
+        text-transform: uppercase;
+    }
+    &-trademark > a {
+        font-weight: bold;
+        text-decoration: none;
+        transition: color .2s;
+        color: rgba(255,255,255,0.7);
+
+        &:hover {
+            color: #fff;
+        }
     }
 }
 </style>
