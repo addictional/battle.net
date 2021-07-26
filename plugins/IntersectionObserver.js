@@ -2,11 +2,11 @@ class InsectionObserverService {
     _observer = null;
     _cbMap = null;
 
-    constructor() {
+    constructor(params) {
         this._cbMap = new WeakMap();
         this._observer = new IntersectionObserver(
             this._onChange.bind(this), 
-            {
+            params || {
                 root: null,
                 threshold: 0.7,
             }
@@ -23,7 +23,6 @@ class InsectionObserverService {
 
 
     observe(target,cb) {
-
         this._cbMap.set(target,cb);
         this._observer.observe(target);
     }
@@ -34,8 +33,13 @@ class InsectionObserverService {
         this._cbMap.delete(target);
     }
 
+    destroy() {
+        this._observer.disconnect()
+    }
+
 }
 
 export default (_,inject) =>  {
     inject('intersectionObserver',new InsectionObserverService())
+    inject('intersectionObserverEntity',InsectionObserverService)
 }

@@ -19,7 +19,7 @@
             <a href="/sdf/" class="games-header__link">{{$t('link')}}</a>
         </div>
         <div class="games-list">
-            <div v-for="item in items" :key="item.image" class="games-list__card"><a href="/"><div class="games-list__card__view" :style="{backgroundImage: `url(${item.image})`}"></div></a></div>
+            <div v-for="(item,i) in items" :key="i" class="games-list__card"><a href="/"><div v-if="item.active" class="games-list__card__view" :style="item.styles"></div></a></div>
         </div>
     </div>
   </section>
@@ -30,12 +30,104 @@
 
 
 export default {
-    props: {
-        items: {
-            type: Array,
-            default: () => [],
-            required: true,
+
+    data() {
+      return {
+        items:  [
+        {
+            styles: {backgroundImage: "/images/diablo2.jpeg"},
+            "name": "diablo 2",
+            active: false,
+        },
+        {
+            styles: {backgroundImage: "/images/overwatch2.jpeg"},
+            "name": "diablo 2",
+            active: false
+        },
+        {
+            styles: {backgroundImage: "/images/overwatch.jpeg"},
+            "name": "diablo 2",
+            active: false
+        },
+        {
+            styles: {backgroundImage: "/images/world-of-warcraft.jpeg"},
+            "name": "diablo 2",
+            active: false
+        },
+        {
+            styles: {backgroundImage: "/images/hearthstone.jpeg"},
+            "name": "diablo 2",
+            active: false
+        },
+        {
+            styles: {backgroundImage: "/images/hots.jpeg"},
+            "name": "diablo 2",
+            active: false
+        },
+        {
+            styles: {backgroundImage: "/images/warcraft3-reforged.jpeg"},
+            "name": "diablo 2",
+            active: false
+        },
+        {
+            styles: {backgroundImage: "/images/diablo4.jpeg"},
+            "name": "diablo 2",
+            active: false
+        },
+        {
+            styles: {backgroundImage: "/images/diablo-immortal.jpeg"},
+            "name": "diablo 2",
+            active: false
+        },
+        {
+            styles: {backgroundImage: "/images/diablo3.jpeg"},
+            "name": "diablo 2",
+            active: false
+        },
+        {
+            styles: {backgroundImage: "/images/starcraft2.jpeg"},
+            "name": "diablo 2",
+            active: false
+        },
+        {
+            styles: {backgroundImage: "/images/starcraft-remastered.jpeg"},
+            "name": "diablo 2",
+            active: false
+        },
+        {
+            styles: {backgroundImage: "/images/rtro-game.jpeg"},
+            "name": "diablo 2",
+            active: false
         }
+      ]
+      }
+    },
+
+    mounted() {
+      this.observer = new this.$intersectionObserverEntity({
+        root: null,
+        threshold: 0.25,
+      });
+
+
+      Array.from(this.$el.querySelectorAll(".games-list__card")).forEach((item,i) => {
+        this.observer.observe(item,(intersectionRatio) => {
+          if(intersectionRatio > 0.2) {
+            const src = this.items[i].styles.backgroundImage;
+            const image = new Image();
+            image.src = src
+            image.onload = () => {
+              this.items.splice(i, 1, {...this.items[i],styles: {backgroundImage: `url(${src})`},active: true});
+            }
+            this.observer.unobserve(item);
+          }
+        })
+      })
+
+    },
+
+    destroy() {
+        this.observer.destroy()
     }
 
 }
