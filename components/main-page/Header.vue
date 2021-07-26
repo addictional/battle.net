@@ -15,7 +15,7 @@
     <header class="header">
         <nav class="navbar" >
             <nuxt-link :to="localePath('/')" class="navbar__root-link" >
-            <svg-icon name="logo" fill="#009ae4" class="navbar__root-link__icon"  />
+            <icon id="logo" fill="#009ae4" class="navbar__root-link__icon"  />
             </nuxt-link>
             <nav class="navbar-items"> 
                 <nuxt-link :to="localePath('/about')"  class="navbar-items__link">{{$t('nav.0')}}</nuxt-link>

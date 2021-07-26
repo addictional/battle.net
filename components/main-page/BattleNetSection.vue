@@ -38,7 +38,7 @@
                 <a href="" class="info__learn-more button button--outlined">{{$t('learnMore')}}</a>
                 <p class="info__paragraph">{{$t('alsoAvailable.text')}} <a href="/s/s">{{$t('alsoAvailable.link')}}</a></p>
             </div>
-            <svg-icon class="content__tag" name="battle-net-tag"/>
+            <icon id="battle-net-tag" class="content__tag"/>
             <img :src="`/images/battle-net-section/${currentLocale}/app.jpeg`" alt="" class="content__app-image">
         </div>
     </section>    
@@ -172,6 +172,7 @@ export default {
             height: 332px;
             z-index: 1;
         }
+
     }
 }
 </style>

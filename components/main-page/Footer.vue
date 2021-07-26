@@ -28,15 +28,15 @@
                 </div>
             </div>
             <div class="selector-toggle" @click="visible = !visible">
-                <div class="selector-toggle__icon"><svg-icon name="globus"  /></div>
+                <div class="selector-toggle__icon"><icon id="globus"  /></div>
                 <label class="selector-toggle__label">{{currentLocale}}</label>
-                <div class="selector-toggle__arrows"><svg-icon name="arrows"/></div>
+                <div class="selector-toggle__arrows"><icon id="arrows"/></div>
             </div>
         </div>
         <div class="footer-logo">
             <nuxt-link :to="localePath('/')">
-            <svg-icon name="logo2"/>
-            <svg-icon name="entertainment"/>
+            <icon id="logo2"/>
+            <icon id="entertainment"/>
              </nuxt-link>
         </div>
 
@@ -51,7 +51,7 @@
         </nav>
         <div class="footer-download-text">
             <span>All games, one app:</span>
-            <a class="footer-download-text__link"> <svg-icon name="battle-net-tag"/> Battle.net Desktop App</a>
+            <a class="footer-download-text__link"> <icon id="battle-net-tag"/> Battle.net Desktop App</a>
         </div>
         <div class="footer-copyright">©2021 Blizzard Entertainment, Inc. All rights reserved.</div>
         <div class="footer-trademark">All <a href="https://www.blizzard.com/legal/b04001c4-dc81-480d-a475-5e276e241e4f/">trademarks</a> referenced herein are the properties of their respective owners.</div>
@@ -129,41 +129,7 @@ export default {
         }
     }
 
-    &-nav {
-        display: block;
-        width: 100%;
-        text-align: center;
-        margin: 15px 0;
-        font-family: "Blizzard",Helvetica,Arial,sans-serif;
-        font-size: 17px;
-        line-height: 1.4;
-        color: rgba(255,255,255,0.7);
-        :first-child::before {
-            display: none;
-        }
-        &__item {
-            text-transform: uppercase;
-            &:hover {
-                color: rgba(255,255,255);
-            }
-            &::before {
-                content: '';
-                display: inline-block;
-                height: 10px;
-                width: 1px;
-                background-color: rgba(255,255,255,0.3);
-                margin: 0 15px;
-                pointer-events: none;
-            }
-        } 
-        &.footer-nav--sublinks {
-            font-size: 13px;
-            margin: 0;
-            .footer-nav__item::before {
-                margin: 0 10px;
-            }
-        }   
-    }
+
 
     .overlay {
         position: fixed;

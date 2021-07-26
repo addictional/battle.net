@@ -3,7 +3,7 @@
     <Header/>
     <Nuxt/>
     <Footer/>
-    
+    <SvgSymbols class="svg-sprite"/>
   </div>
 </template>
 
@@ -11,12 +11,13 @@
 
 // <script>
 
-// import IntersectionObserverService from '../services/IntersectionObserver';
+import Header from '../components/main-page/Header.vue';
+import Footer from '../components/main-page/Footer.vue'
 
-// export default {
-//   provide: {intersectionObserver: new IntersectionObserverService()}
-// }
-// </script>
+export default {
+  components: {Header,Footer}
+}
+</script>
 
 <style lang="scss" >
 @use './assets/styles/main';

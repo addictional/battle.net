@@ -1,8 +1,6 @@
 <template>
   <main>
-    <client-only>
-        <main-slider/>
-    </client-only>
+    <main-slider/>
     <game-cards-section />
     <battle-net-section/>
     <career/>
@@ -11,10 +9,10 @@
 </template>
 
 <script>
-import BattleNetSection from '../components/BattleNetSection.vue';
+import BattleNetSection from '../components/main-page/BattleNetSection.vue';
 import Career from '../components/Career.vue';
-import GameCardsSection from '../components/GameCardsSection.vue';
-import MainSlider from '../components/MainSlider.vue';
+import GameCardsSection from '../components/main-page/GameCardsSection.vue';
+import MainSlider from '../components/main-page/MainSlider.vue';
 
 
 
