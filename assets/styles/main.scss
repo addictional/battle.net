@@ -1,16 +1,32 @@
-@use './variables';
+@use './variables' as a;
 @use './fonts';
 @use './buttons';
+@use './footer';
 
 h1, h2, h3, h4, h5, h6, p {
     margin:0;
     padding: 0;
 }
 
+::-webkit-scrollbar {
+    width: 9px;
+    background: rgba(29,34,44,0.5);
+    padding-right: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.12);
+    border-radius: 4.5px;
+}
+::-webkit-scrollbar-track-piece {
+    border-left: 1px solid rgba(255,255,255,0.07);
+}
+
 body {
     margin: 0;
     font-family: "Blizzard";
-    background-color: #002650;
+    background-color: a.$blueBackground;
+
 }
 a {
     text-decoration: none;

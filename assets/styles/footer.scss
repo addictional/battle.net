@@ -1,0 +1,35 @@
+.footer-nav {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 15px 0;
+    font-family: "Blizzard",Helvetica,Arial,sans-serif;
+    font-size: 17px;
+    line-height: 1.4;
+    color: rgba(255,255,255,0.7);
+    :first-child::before {
+        display: none;
+    }
+    &__item {
+        text-transform: uppercase;
+        &:hover {
+            color: rgba(255,255,255);
+        }
+        &::before {
+            content: '';
+            display: inline-block;
+            height: 10px;
+            width: 1px;
+            background-color: rgba(255,255,255,0.3);
+            margin: 0 15px;
+            pointer-events: none;
+        }
+    } 
+    &.footer-nav--sublinks {
+        font-size: 13px;
+        margin: 0;
+        .footer-nav__item::before {
+            margin: 0 10px;
+        }
+    }   
+}

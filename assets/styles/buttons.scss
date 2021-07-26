@@ -17,7 +17,7 @@
     box-sizing: border-box;
     &:hover {
         background-color: #007bc6;
-        border: solid 1px #79d4ff;
+        border-color: #79d4ff;
         color: #fff;
     }
 
@@ -25,5 +25,16 @@
         background-color: transparent;
         color: #00aeff;
         padding: 10px 16px;
+    }
+
+    &--rounded {
+        border-radius: 4px;
+    }
+
+    &--disable-border {
+        border: 2px solid transparent;
+        &:hover {
+            border-color: #47a6ff;
+        }
     }
 }
