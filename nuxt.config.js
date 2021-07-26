@@ -54,6 +54,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     'nuxt-i18n', 
+    '@nuxtjs/auth-next'
   ],
   
   i18n: {

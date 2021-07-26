@@ -14,11 +14,14 @@
     "heroku-postbuild": "nuxt build"
   },
   "dependencies": {
+    "@nuxtjs/auth-next": "5.0.0-1624817847.21691f1",
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/svg-sprite": "^0.5.2",
+    "cheerio": "^1.0.0-rc.10",
     "core-js": "^3.15.1",
     "nuxt": "^2.15.7",
     "nuxt-i18n": "^6.27.3",
+    "raw-loader": "^4.0.2",
     "stylelint-scss": "^3.20.1"
   },
   "devDependencies": {
