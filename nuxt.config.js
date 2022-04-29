@@ -1,5 +1,4 @@
 import Sass from 'sass';
-import Fiber from 'fibers'
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -91,11 +90,6 @@ export default {
 
       implementation: Sass,
 
-      sassOptions: {
-
-        fiber: Fiber
-
-      }
 
     }
 

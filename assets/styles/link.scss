@@ -1,0 +1,9 @@
+.markup-link {
+    color: #00aeff;
+    transition: color 200ms;
+    text-underline-position: under;
+    text-decoration: underline;
+    &:hover, &:focus {
+        color: #fff;
+    }
+}

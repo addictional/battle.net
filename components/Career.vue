@@ -40,11 +40,11 @@ export default {
             timeoutId: null,
             observer: null,
             list: [
-                {image: '/images/career/careers-1.jpeg',background: 'rgb(27, 23, 15'},
-                {image: '/images/career/careers-2.jpeg',background: 'rgb(27, 23, 15'},
-                {image: '/images/career/careers-3.jpeg',background: 'rgb(27, 23, 15'},
-                {image: '/images/career/careers-4.jpeg',background: 'rgb(27, 23, 15'},
-                {image: '/images/career/careers-5.jpeg',background: 'rgb(27, 23, 15'},
+                {image: '/images/career/careers-1.jpeg',background: 'rgb(27, 23, 15',loaded: false},
+                {image: '/images/career/careers-2.jpeg',background: 'rgb(27, 23, 15',loaded: false},
+                {image: '/images/career/careers-3.jpeg',background: 'rgb(27, 23, 15',loaded: false},
+                {image: '/images/career/careers-4.jpeg',background: 'rgb(27, 23, 15',loaded: false},
+                {image: '/images/career/careers-5.jpeg',background: 'rgb(27, 23, 15',loaded: false},
             ]
         };
     },

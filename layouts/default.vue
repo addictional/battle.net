@@ -2,7 +2,7 @@
   <div class="page__container">
     <Header/>
     <Nuxt/>
-    <Footer/>
+    <Footer background="/images/about-page/footer-bg.jpg"/>
     <SvgSymbols class="svg-sprite"/>
   </div>
 </template>
@@ -11,8 +11,8 @@
 
 // <script>
 
-import Header from '../components/main-page/Header.vue';
-import Footer from '../components/main-page/Footer.vue'
+import Header from '../components/common/Header.vue';
+import Footer from '../components/common/Footer.vue'
 
 export default {
   components: {Header,Footer}

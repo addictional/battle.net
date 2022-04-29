@@ -36,7 +36,7 @@
                 </div>
                 <a class="info__download button">{{$t('download')}}<div class="info__download__icon"><svg-icon name="windows-icon"/></div></a>
                 <a href="" class="info__learn-more button button--outlined">{{$t('learnMore')}}</a>
-                <p class="info__paragraph">{{$t('alsoAvailable.text')}} <a href="/s/s">{{$t('alsoAvailable.link')}}</a></p>
+                <p class="info__paragraph">{{$t('alsoAvailable.text')}} <a class="markup-link" href="/s/s">{{$t('alsoAvailable.link')}}</a></p>
             </div>
             <icon id="battle-net-tag" class="content__tag"/>
             <img :src="`/images/battle-net-section/${currentLocale}/app.jpeg`" alt="" class="content__app-image">
@@ -139,16 +139,6 @@ export default {
                 color: #fff;
                 color: rgba(255,255,255,.8);
                 margin-top: 24px;
-
-                & >a {
-                    color: #00aeff;
-                    transition: color 200ms;
-                    text-underline-position: under;
-                    text-decoration: underline;
-                    &:hover, &:focus {
-                        color: #fff;
-                    }
-                }
             }
         }
         
